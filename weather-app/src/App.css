@@ -1,0 +1,109 @@
+body, html {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.app-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.app {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 20px;
+  padding: 40px;
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.app-title {
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin-bottom: 30px;
+  user-select: none;
+}
+
+.search-bar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.search-bar input {
+  flex-grow: 1;
+  padding: 14px 18px;
+  font-size: 1.1rem;
+  border: 2px solid #ddd;
+  border-radius: 35px;
+  outline: none;
+}
+
+.search-bar input:focus { border-color: #2563eb; }
+
+.search-bar button {
+  background-color: #2563eb;
+  border: none;
+  border-radius: 35px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  padding: 14px 25px;
+  cursor: pointer;
+}
+
+.search-bar button:hover { background-color: #1e40af; }
+
+.loader {
+  margin: 30px auto;
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #2563eb;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.error {
+  color: #dc2626;
+  font-weight: 700;
+  margin-bottom: 20px;
+  user-select: none;
+}
+
+.weather-card {
+  background: rgba(255,255,255,0.9);
+  border-radius: 25px;
+  padding: 30px 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.main-weather {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.weather-icon { display: flex; justify-content: center; align-items: center; }
+
+.main-info h2 { font-size: 2.5rem; margin: 0 0 10px 0; }
+.main-info .temp { font-size: 3rem; font-weight: 900; }
+.main-info .desc { font-size: 1.2rem; text-transform: capitalize; color: inherit; }
+.main-info p { margin: 5px 0; }
+
+@media (max-width: 480px) {
+  .main-weather { flex-direction: column; }
+  .main-info h2 { font-size: 2rem; }
+  .main-info .temp { font-size: 2.5rem; }
+}
